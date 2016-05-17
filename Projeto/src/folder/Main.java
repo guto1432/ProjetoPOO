@@ -40,9 +40,11 @@ public class Main {
 				Paciente NovoPaciente = new Paciente(eNome,eIdade,ePeso,eAltura,eSexo,eIMC);
 			}
 			catch(IllegalArgumentException e){
-				System.out.println("Informe em 'sexo': masculino ou feminino";)
+				System.out.println("Informe em 'sexo': masculino ou feminino");
 			}
-			// continuando aqui....
+			/* exibir opções de nível de atividade física,
+			 * passando por parâmetro o paciente (alterar a classe NEE para isto)
+			 */
 		}
 	}
 
