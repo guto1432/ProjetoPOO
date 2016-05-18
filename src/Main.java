@@ -45,7 +45,7 @@ public class Main {
 			eNivel = Entrada.nextDouble();
 			NEE cNEE = new NEE();
 			cNEE.CalculaNEE(NovoPaciente, eNivel);
-			
+			System.out.println(NovoPaciente.getSexo());
 		}while(true);
 	}
 }

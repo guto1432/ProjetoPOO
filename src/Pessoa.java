@@ -5,7 +5,7 @@ public class Pessoa {
     private int Idade;
     private double Peso;
     private double Altura;
-    protected String Sexo;
+    private String Sexo;
     
     
     //Construtor
