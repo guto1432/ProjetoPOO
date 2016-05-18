@@ -1,6 +1,8 @@
+package Classes;
+
 import java.util.Scanner;
 
-import com.sun.javafx.css.CalculatedValue;
+//import com.sun.javafx.css.CalculatedValue;
 
 import java.util.ArrayList;
 
@@ -14,11 +16,13 @@ public class Main {
 	static String eSexo;
 	static double eIMC;
 	static double eNivel;
-	
+	static double eCintura;
+        static double eQuadril;
+        
 	public static void main(String[] args) {
 		/* solicita os dados : nome, idade, peso, altura, sexo
 		 * calcula o imc
-		 * lista os níveis de atividade fisica, conforme o sexo
+		 * lista os nÃ­veis de atividade fisica, conforme o sexo
 		 * ao informar o nivel de ativ, calcular a nee correspondente (homem/mulher eutrofico/sobrepeso)
 		*/
 		Pacientes = new ArrayList<Paciente>();
@@ -45,7 +49,14 @@ public class Main {
 			eNivel = Entrada.nextDouble();
 			NEE cNEE = new NEE();
 			cNEE.CalculaNEE(NovoPaciente, eNivel);
-			System.out.println(NovoPaciente.getSexo());
+			//System.out.println(NovoPaciente.getSexo());
+                        System.out.print("Informe a medida do quadril. >");
+			eQuadril = Entrada.nextDouble();
+                        System.out.print("Informe a medida da Cintura. >");
+			eCintura = Entrada.nextDouble();
+                        CinturaQuadril CQ = new CinturaQuadril(eCintura,eQuadril);
+                        System.out.println(CQ.calculaRelacao(NovoPaciente));
+                                
 		}while(true);
 	}
 }
