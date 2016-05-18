@@ -8,6 +8,8 @@ public class Recomendacao {
     private String CHOSIMPLES;
     private String LIPIDEOS;
     private String PROTEINAS;
+    private double dValorDesvio;
+    private double dValorNEE;
     
     //Construtor
     public Recomendacao()
@@ -24,26 +26,28 @@ public class Recomendacao {
     }
     
     //Metodo que gera a recomendação
-    public String Receita(String sexo)
+    public String Receita(Paciente pPaciente, double dNivel)
     {
-        double CH,LI,PTN,total;
-        if("Masculino".equals(sexo) || "masculino".equals(sexo))
+        double CH = 0,LI = 0,PTN = 0,total = 0;
+        NEE calcNEE = new NEE();
+        dValorNEE = calcNEE.CalculaNEE(pPaciente, dNivel);
+        if("MASCULINO".equals(pPaciente.getSexo()))
         {
-            CH = 670*75/100;
-            LI = 670*15/100;
-            PTN = 670*10*100;
+        	dValorDesvio = dValorNEE - 416;
+            CH = dValorDesvio*75/100;
+            LI = dValorDesvio*15/100;
+            PTN = dValorDesvio*10*100;
             total = CH+LI+PTN;
-            return "CHO    LIP    PTN    TOTAL" + "\n" + CH + "    " + LI + "    " + PTN + "    " + total + " Kcal/dia" + "\n" + CH/4 + "    " + LI/9 + "    " + PTN/4 + "    " + CH/4+LI/9+PTN/4 + " g/dia" + "\n";                    
         }
         
-        if("Femenino".equals(sexo) || "femenino".equals(sexo))
+        if("FEMININO".equals(pPaciente.getSexo()))
         {
-            CH = 128*75/100;
-            LI = 128*15/100;
-            PTN = 128*10*100;
+        	dValorDesvio = dValorNEE - 320;
+            CH = dValorDesvio*75/100;
+            LI = dValorDesvio*15/100;
+            PTN = dValorDesvio*10*100;
             total = CH+LI+PTN;
-            return "CHO    LIP    PTN    TOTAL" + "\n" + CH + "    " + LI + "    " + PTN + "    " + total + " Kcal/dia" + "\n" + CH/4 + "    " + LI/9 + "    " + PTN/4 + "    " + CH/4+LI/9+PTN/4 + " g/dia" + "\n";                    
         }
-        return null;
+        return "CHO    LIP    PTN    TOTAL" + "\n" + CH + "    " + LI + "    " + PTN + "    " + total + " Kcal/dia" + "\n" + CH/4 + "    " + LI/9 + "    " + PTN/4 + "    " + CH/4+LI/9+PTN/4 + " g/dia" + "\n";                    
     }
 }

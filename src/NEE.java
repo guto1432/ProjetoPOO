@@ -2,7 +2,7 @@ public class NEE{
     
     private double Resultado;
     
-    public String CalculaNEE(Paciente pPaciente, double dNivel){
+    public double CalculaNEE(Paciente pPaciente, double dNivel){
     	if ("FEMININO".equals(pPaciente.getSexo().toUpperCase())){
     		if(pPaciente.getIMC()>=25){
                 Resultado = ( 448 - (pPaciente.getIdade()*7.95) + (dNivel* (11.4*pPaciente.getPeso()+ 619*pPaciente.getAltura())));
@@ -19,6 +19,6 @@ public class NEE{
                 Resultado = (662-(pPaciente.getIdade()*9.53) + (dNivel* (15.91*pPaciente.getPeso()+540*pPaciente.getAltura())));    			
     		}
     	}
-        return Resultado + " Kcal/dia." + "\n";
+        return Resultado;
     	}
 }
