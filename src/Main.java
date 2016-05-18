@@ -26,31 +26,25 @@ public class Main {
 			Scanner Entrada = new Scanner(System.in);
 			System.out.print("Informe o Nome do paciente. > ");
 			eNome = Entrada.nextLine();
-			Entrada.nextLine();
 			System.out.print("Informe a idade. > ");
 			eIdade = Entrada.nextInt();
 			System.out.print("Informe o peso. > ");
 			ePeso = Entrada.nextDouble();
 			System.out.print("Informe a altura. > ");
 			eAltura = Entrada.nextDouble();
+			Entrada.nextLine();
+			System.out.print("Informe o sexo. > ");
+			eSexo= Entrada.nextLine();
 			IMC cIMC = new IMC();			
 			eIMC = cIMC.CalculaImc(ePeso, eAltura);
 			System.out.println("IMC calculado: " + eIMC);
-			System.out.print("Informe o sexo. > ");
-			eSexo= Entrada.nextLine();
-			
-			try{
-				Paciente NovoPaciente = new Paciente(eNome,eIdade,ePeso,eAltura,eSexo,eIMC);
-				NivelAtividade cNivel = new NivelAtividade();
-				cNivel.ListaNivelAtividade(NovoPaciente);
-				System.out.print("Informe o nivel de atividade fisica. >");
-				eNivel = Entrada.nextDouble();
-				NEE cNEE = new NEE();
-				cNEE.CalculaNEE(NovoPaciente, eNivel);
-			}
-			catch(IllegalArgumentException e){
-				System.out.println("Informe em 'sexo': masculino ou feminino");
-			}
+			Paciente NovoPaciente =  new Paciente(eNome,eIdade,ePeso,eAltura,eSexo,eIMC);
+			NivelAtividade cNivel = new NivelAtividade();
+			cNivel.ListaNivelAtividade(NovoPaciente);
+			System.out.print("Informe o nivel de atividade fisica. >");
+			eNivel = Entrada.nextDouble();
+			NEE cNEE = new NEE();
+			cNEE.CalculaNEE(NovoPaciente, eNivel);
 			
 		}while(true);
 	}
