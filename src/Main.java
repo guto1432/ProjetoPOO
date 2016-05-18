@@ -13,6 +13,7 @@ public class Main {
 	static double eAltura;
 	static String eSexo;
 	static double eIMC;
+	static double eNivel;
 	
 	public static void main(String[] args) {
 		/* solicita os dados : nome, idade, peso, altura, sexo
@@ -32,19 +33,25 @@ public class Main {
 			ePeso = Entrada.nextDouble();
 			System.out.print("Informe a altura. > ");
 			eAltura = Entrada.nextDouble();
+			IMC cIMC = new IMC();			
+			eIMC = cIMC.CalculaImc(ePeso, eAltura);
+			System.out.println("IMC calculado: " + eIMC);
 			System.out.print("Informe o sexo. > ");
 			eSexo= Entrada.nextLine();
-			eIMC = 1;
 			
 			try{
 				Paciente NovoPaciente = new Paciente(eNome,eIdade,ePeso,eAltura,eSexo,eIMC);
+				NivelAtividade cNivel = new NivelAtividade();
+				cNivel.ListaNivelAtividade(NovoPaciente);
+				System.out.print("Informe o nivel de atividade fisica. >");
+				eNivel = Entrada.nextDouble();
+				NEE cNEE = new NEE();
+				cNEE.CalculaNEE(NovoPaciente, eNivel);
 			}
 			catch(IllegalArgumentException e){
 				System.out.println("Informe em 'sexo': masculino ou feminino");
 			}
-			/* exibir opções de nível de atividade física,
-			 * passando por parâmetro o paciente (alterar a classe NEE para isto)
-			 */
+			
 		}while(true);
 	}
 }

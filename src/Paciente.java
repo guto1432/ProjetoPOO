@@ -14,7 +14,4 @@ public class Paciente extends Pessoa {
 	public void setIMC(double iMC) {
 		IMC = iMC;
 	}
-	public String getSexo(){
-		return Sexo;
-	}
 }
