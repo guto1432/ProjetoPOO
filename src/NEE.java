@@ -2,9 +2,10 @@ public class NEE{
     
     private double Resultado;
     
-    public String CalculaNEE(Paciente pPaciente, double dNivel){
+    /*public String CalculaNEE(Paciente pPaciente, double dNivel){
     	if ("FEMININO".equals(pPaciente.))
-    }
+    }*/
+    
     //Calculos da NEE EUTROFICOS
     public String NEE_eutroficos(int idade, double nivelATV, double peso, double altura, String sexo)
     {

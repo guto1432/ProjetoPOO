@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-package folder;
-
-
-public class Pessoa {
-    //Campos
-    String Nome;
-    String Sexo;
-    int Idade;
-    double Peso;
-    double Altura;
-    double N_atividade;
-    
-    //Construtor
-    public Pessoa(String sNome, String sexo, int iIdade, double dPeso, double dAltura, double Nivel)
-    {
-        Nome = sNome;
-        Sexo = sexo;
-	Idade = iIdade;
-	Peso = dPeso;
-	Altura = dAltura;
-        N_atividade = Nivel;
-    }
-}
-=======
 package folder;
 
 public class Pessoa {
@@ -48,5 +23,55 @@ public class Pessoa {
         	throw new IllegalArgumentException();
         }
     }
+
+
+	public String getNome() {
+		return Nome;
+	}
+
+
+	public void setNome(String nome) {
+		Nome = nome;
+	}
+
+
+	public int getIdade() {
+		return Idade;
+	}
+
+
+	public void setIdade(int idade) {
+		Idade = idade;
+	}
+
+
+	public double getPeso() {
+		return Peso;
+	}
+
+
+	public void setPeso(double peso) {
+		Peso = peso;
+	}
+
+
+	public double getAltura() {
+		return Altura;
+	}
+
+
+	public void setAltura(double altura) {
+		Altura = altura;
+	}
+
+
+	public String getSexo() {
+		return Sexo;
+	}
+
+
+	public void setSexo(String sexo) {
+		Sexo = sexo;
+	}
+    
 }
->>>>>>> refs/remotes/origin/herança

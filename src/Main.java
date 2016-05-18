@@ -5,14 +5,14 @@ import com.sun.javafx.css.CalculatedValue;
 import java.util.ArrayList;
 
 public class Main {
-	private ArrayList<Paciente> Pacientes;
+	private static ArrayList<Paciente> Pacientes;
 	Scanner Entrada;
-	String eNome;
-	double eIdade;
-	double ePeso;
-	double eAltura;
-	String eSexo;
-	double eIMC;
+	static String eNome;
+	static int eIdade;
+	static double ePeso;
+	static double eAltura;
+	static String eSexo;
+	static double eIMC;
 	
 	public static void main(String[] args) {
 		/* solicita os dados : nome, idade, peso, altura, sexo
@@ -27,14 +27,14 @@ public class Main {
 			eNome = Entrada.nextLine();
 			Entrada.nextLine();
 			System.out.print("Informe a idade. > ");
-			eIndade = Entrada.nextDouble();
+			eIdade = Entrada.nextInt();
 			System.out.print("Informe o peso. > ");
 			ePeso = Entrada.nextDouble();
 			System.out.print("Informe a altura. > ");
 			eAltura = Entrada.nextDouble();
 			System.out.print("Informe o sexo. > ");
-			eSexo= Entrada.nextline();
-			eIMC = CalculaImc(ePeso, eAltura);
+			eSexo= Entrada.nextLine();
+			eIMC = 1;
 			
 			try{
 				Paciente NovoPaciente = new Paciente(eNome,eIdade,ePeso,eAltura,eSexo,eIMC);
@@ -45,7 +45,6 @@ public class Main {
 			/* exibir opções de nível de atividade física,
 			 * passando por parâmetro o paciente (alterar a classe NEE para isto)
 			 */
-		}
+		}while(true);
 	}
-
 }
